@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="style.css">
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тест</title>
+
+<style>
+ body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        overflow-x: hidden;
+        line-height: 1.6;
+    }
+
+.menu a:hover {
+        text-decoration: underline;
+    }
+
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: rgb(255, 255, 255);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#resultBtn {
+    display: none;
+    padding: 10px;
+    background: #222;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- МЕНЮ -->
+<div class="menu">
+    <a href="index.html">Главная</a>
+    <a href="travel.html">Путешествие</a>
+    <a href="anthem.html">Гимн</a>
+    <a href="history.html">История</a>
+    <a href="test.html" class="active">Тест на адекватность</a>
+</div>
+
+<div class="container">
+
+<h1>Тест на адекватность 0–2 балла — тяжелая стадия адекватности, 3–5 баллов - умеренная адекватность, 6–8 баллов - начальная фаза адекватности, 9–10 баллов - отсутствие псих. расстройства адекватность</h1>
+
+<div class="card">
+<p>1. Что ты делаешь на уроке?</p>
+<label><input type="radio" name="q1" value="0" onchange="check()"> работаю и учусь</label>
+<label><input type="radio" name="q1" value="1" onchange="check()"> считаю сколько минут до конца урока</label>
+<label><input type="radio" name="q1" value="2" onchange="check()"> срываю урок и строю ссср из бумажных шариков</label>
+</div>
+
+<div class="card">
+<p>2. Как ты пишешь контрольную?</p>
+<label><input type="radio" name="q2" value="0" onchange="check()"> спокойно решаю задания</label>
+<label><input type="radio" name="q2" value="1" onchange="check()"> смотрю в окно для вдохновения</label>
+<label><input type="radio" name="q2" value="2" onchange="check()"> пытаюсь договориться с ручкой, чтобы она писала сама</label>
+</div>
+
+<div class="card">
+<p>3. Что ты делаешь, если не понял тему?</p>
+<label><input type="radio" name="q3" value="0" onchange="check()"> спрашиваю учителя или друга</label>
+<label><input type="radio" name="q3" value="1" onchange="check()"> делаю вид, что понял</label>
+<label><input type="radio" name="q3" value="2" onchange="check()"> устраиваю революцию и свергаю тему</label>
+</div>
+
+<div class="card">
+<p>4. Что делаешь при звоне будильника в школу</p>
+<label><input type="radio" name="q4" value="0" onchange="check()"> всаю,ем,занимаюсь гигиеной и иду в школу</label>
+<label><input type="radio" name="q4" value="1" onchange="check()"> нажимаю кнопку добавить минуту и так вплоть до 5 минут до уроков и лечу на пердеже в школу</label>
+<label><input type="radio" name="q4" value="2" onchange="check()"> меняю рингтон будильника на "я веселый таракан я беге, бегу, бегу и не иду в школу"</label>
+</div>
+
+<div class="card">
+<p>5. Что ты делаешь перед уроком?</p>
+<label><input type="radio" name="q5" value="0" onchange="check()"> готовлюсь и открываю тетрадь</label>
+<label><input type="radio" name="q5" value="1" onchange="check()"> смотрю на парту, надеясь на чудо</label>
+<label><input type="radio" name="q5" value="2" onchange="check()"> занимаюсь развитием творожкого ссср</label>
+</div>
+
+<button id="resultBtn" onclick="show()">Показать результат</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+function check() {
+    let all =
+        document.querySelector('input[name="q1"]:checked') &&
+        document.querySelector('input[name="q2"]:checked') &&
+        document.querySelector('input[name="q3"]:checked') &&
+        document.querySelector('input[name="q4"]:checked') &&
+        document.querySelector('input[name="q5"]:checked');
+
+    if (all) {
+        document.getElementById("resultBtn").style.display = "block";
+    }
+}
+
+function show() {
+    let score = 0;
+
+    for (let i = 1; i <= 5; i++) {
+        let ans = document.querySelector(`input[name="q${i}"]:checked`);
+        score += Number(ans.value);
+    }
+
+    document.getElementById("result").innerText =
+        "Баллы: " + score;
+}
+</script>
+
+</body>
+</html>
