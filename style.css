@@ -24,7 +24,7 @@ body {
   line-height: 1.6;
 
   /* фон */
-  background-image: url("image_256x256.png");
+  background-image: url("image_256×256.png");
   background-repeat: repeat;
 
   /* ключевое — зависимость от соотношения сторон */
