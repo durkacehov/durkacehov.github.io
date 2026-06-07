@@ -7,44 +7,52 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
 
-    /* фон стен */
-    background-image: url("wall.png");
-    background-repeat: repeat;
-
-    /* зависит от соотношения сторон */
-    background-size: 12vmin 12vmin;
+    background: #f5f5f5;
+    color: #111;
 }
 
-/* белый блок (комната) */
+/* КОНТЕЙНЕР */
 .container {
     max-width: 1000px;
     margin: 20px auto;
     padding: 20px;
 
-    background: rgba(255, 255, 255, 0.95);
+    background: #ffffff;
     border-radius: 16px;
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* меню hover */
+/* МЕНЮ */
+.menu {
+    background: #222;
+    padding: 10px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin-right: 12px;
+    font-weight: bold;
+}
+
 .menu a:hover {
     text-decoration: underline;
 }
 
-/* заголовки */
+/* ЗАГОЛОВКИ */
 h1 {
     font-size: 30px;
     margin-top: 10px;
 }
 
-/* текст без justify */
+/* ТЕКСТ */
 p {
     text-align: left;
     overflow-wrap: break-word;
 }
 
-/* картинки */
+/* КАРТИНКИ */
 img {
     max-width: 100%;
     height: auto;
@@ -52,22 +60,23 @@ img {
     margin-top: 15px;
 }
 
-/* адаптация под телефон */
+/* МОБИЛЬНАЯ ВЕРСИЯ */
 @media (max-width: 600px) {
-    body {
-        background-size: 18vmin 18vmin;
-    }
-
     .container {
         padding: 12px;
-        border-radius: 12px;
     }
 
     h1 {
         font-size: 24px;
     }
 
-    p {
-        text-align: left;
+    body {
+        font-size: 16px;
+    }
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
     }
 }
