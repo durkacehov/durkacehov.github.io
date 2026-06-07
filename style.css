@@ -29,7 +29,7 @@ body {
 
     background-image: url("./image_256x256.png");
     background-repeat: repeat;
-    background-size: 12vmin 12vmin;
+    background-size: 36vmin 36vmin;
 
     min-height: 100vh;
 }
