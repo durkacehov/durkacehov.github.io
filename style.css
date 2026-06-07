@@ -18,42 +18,76 @@ img[src="h.png"] {
     max-width: 50%;
     height: auto;
 }
+* {
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 
-  /* фон */
-  background-image: url("image_256×256.png");
-  background-repeat: repeat;
+    /* фон из твоей картинки */
+    background-image: url("image_256x256.png");
+    background-repeat: repeat;
 
-  /* ключевое — зависимость от соотношения сторон */
-  background-size: 24vmin 24vmin;
-
-  /* лёгкая мягкость */
-  filter: brightness(1.03) contrast(0.97);
+    /* зависит от формы экрана */
+    background-size: 12vmin 12vmin;
 }
 
-/* белая "палата" поверх стен */
+/* белая “комната” */
 .container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
 
-  background: rgba(255, 255, 255, 0.88);
-  border-radius: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* адаптация под телефон */
-@media (max-width: 600px) {
-  body {
-    background-size: 36vmin 36vmin;
-  }
+/* меню */
+.menu a:hover {
+    text-decoration: underline;
+}
 
-  .container {
-    padding: 12px;
-    border-radius: 12px;
-  }
+/* заголовок */
+h1 {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+/* текст */
+p {
+    text-align: left;
+    overflow-wrap: break-word;
+}
+
+/* картинки */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 15px;
+}
+
+/* телефон */
+@media (max-width: 600px) {
+    body {
+        background-size: 18vmin 18vmin;
+    }
+
+    .container {
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        text-align: left;
+    }
 }
