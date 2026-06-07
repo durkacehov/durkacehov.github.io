@@ -18,16 +18,4 @@ img[src="h.png"] {
     max-width: 50%;
     height: auto;
 }
-p {
-  text-align: justify;
-  text-justify: inter-word;
-  word-spacing: normal;
-  letter-spacing: normal;
-}
 
-/* 📱 фикс для телефонов — убирает “разрывы” */
-@media (max-width: 768px) {
-  p {
-    text-align: left; /* чтобы на телефоне не ломалось */
-  }
-}
