@@ -29,7 +29,7 @@ body {
 
     background-image: url("./padded_wall_texture_1024.png");
     background-repeat: repeat;
-    background-size: 79vmin 79vmin;
+    background-size: 80vmin 80vmin;
 
     min-height: 100vh;
 }
