@@ -27,7 +27,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
 
-    background-image: url("./image_256x256.png");
+    background-image: url("./padded_wall_texture_1024.png");
     background-repeat: repeat;
     background-size: 79vmin 79vmin;
 
