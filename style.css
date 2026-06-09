@@ -4,7 +4,7 @@
     background-image: 
         linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 45%, rgba(255, 255, 255, 0) 50%),
         linear-gradient(to bottom, #CC0000 0%, #770000 100%);
-    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.8);
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -12,25 +12,35 @@
     z-index: 10;
 }
 
+/* Ссылки в меню по умолчанию: строго серебряные, без фиолетового */
 .menu a {
     text-decoration: none;
     margin-right: 20px;
     display: inline-block;
     padding: 4px 0; 
-    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.8);
+    
+    color: #c0c0c0 !important; /* Твой серебряный цвет */
+    
+    /* Мощная тень текста в меню */
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 1);
     transition: text-shadow 0.2s ease, color 0.2s ease;
 }
 
+/* Эффект при наведении курсора */
 .menu a:hover {
-    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.6);
+    color: #ffffff !important; 
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.8);
 }
 
+/* Выбранный (активный) раздел */
 .menu a.active {
-    color: #FFD700;
+    color: #FFD700 !important; /* Твое золото */
     font-weight: bold;
     border-bottom: 2px solid #FFD700;
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
-    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.6);
+    
+    /* Сильная тень для золотого текста */
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 1);
 }
 
 /* 🖼️ КАРТИНКИ И БАЗОВЫЙ КОД (ТВОЙ ОРИГИНАЛ) */
@@ -63,14 +73,11 @@ body {
     padding: 20px;
 }
 
-/* ✍️ НОВОЕ: ТЕНИ ДЛЯ ТЕКСТА ВСЕХ СТРАНИЦ */
+/* ✍️ УСИЛЕННЫЕ В 2 РАЗА ТЕНИ ДЛЯ ТЕКСТА ВСЕХ СТРАНИЦ */
 h1, h2, h3, h4, h5, h6 {
-    /* Делает крупные заголовки слегка объемными над фоном */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 }
 
 p {
-    /* Легкая, едва заметная тень для обычного текста */
-    /* Она не мешает чтению, но убирает эффект "плоских букв" поверх текстуры */
-    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.15);
+    text-shadow: 1px 1px 1.5px rgba(0, 0, 0, 0.4);
 }
