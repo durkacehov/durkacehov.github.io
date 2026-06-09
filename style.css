@@ -1,15 +1,39 @@
-.menu { background: #CC0000; padding: 12px 20px;}
+/* 👑 СКЕВОМОРФНЫЙ ФОН МЕНЮ */
+.menu {
+    padding: 12px 20px;
+    background-image: 
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 45%, rgba(255, 255, 255, 0) 50%),
+        linear-gradient(to bottom, #CC0000 0%, #770000 100%);
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 10;
+}
+
 .menu a {
-    
     text-decoration: none;
     margin-right: 20px;
+    display: inline-block;
+    padding: 4px 0; 
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.8);
+    transition: text-shadow 0.2s ease, color 0.2s ease;
+}
+
+.menu a:hover {
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.6);
 }
 
 .menu a.active {
     color: #FFD700;
     font-weight: bold;
     border-bottom: 2px solid #FFD700;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9);
 }
+
+/* 🖼️ КАРТИНКИ И БАЗОВЫЙ КОД (ТВОЙ ОРИГИНАЛ) */
 img[src="cehov.webp"] {
     max-width: 100%;
     height: auto;
@@ -26,15 +50,12 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
-
     background-image: url("./padded_wall_texture_1024.png");
     background-repeat: repeat;
     background-size: 80vmin 80vmin;
-
     min-height: 100vh;
 }
 
-/* убираем белый блок полностью */
 .container {
     background: transparent;
     max-width: 100%;
@@ -42,71 +63,14 @@ body {
     padding: 20px;
 }
 
-/* текст поверх текстуры */
-p, h1 {
-    color: black;
+/* ✍️ НОВОЕ: ТЕНИ ДЛЯ ТЕКСТА ВСЕХ СТРАНИЦ */
+h1, h2, h3, h4, h5, h6 {
+    /* Делает крупные заголовки слегка объемными над фоном */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-
-/* 👑 СКЕВОМОРФНЫЙ ФОН МЕНЮ */
-.menu {
-    width: 100%;
-    border: none;
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 0 20px;
-    
-    /* Высота, чтобы стеклянный блик сел ровно по центру */
-    min-height: 60px; 
-
-    /* СЛОИ ГЛЯНЦА: Верхний — белый полупрозрачный блик до 50%, Нижний — градиент от красного к бордовому */
-    background-image: 
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.1) 45%, rgba(255, 255, 255, 0) 50%),
-        linear-gradient(to bottom, #990000 0%, #550000 100%);
-        
-    /* Плотная объемная тень, падающая на стёганую стену */
-    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.6);
-    z-index: 10;
+p {
+    /* Легкая, едва заметная тень для обычного текста */
+    /* Она не мешает чтению, но убирает эффект "плоских букв" поверх текстуры */
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.15);
 }
-
-/* 👑 ОБЪЕМНЫЙ ТЕКСТ ССЫЛОК */
-.menu a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 15px 20px;
-    display: inline-block;
-    transition: all 0.2s ease;
-    
-    /* Та самая легенькая тень под буквами (сдвиг 1px вниз) */
-    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.8);
-}
-
-/* Эффект при наведении (плавное неоновое свечение вместо подчеркивания) */
-.menu a:hover {
-    text-decoration: none; 
-    color: #ffcccc; 
-    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5); 
-}
-
-/* Выделение активной страницы (например, "Путешествие") */
-.menu a.active {
-    color: #ffcc00; /* Сочный желтый */
-    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9); 
-}
-
-/* АДАПТИВ ПОД МОБИЛКИ */
-@media (max-width: 600px) {
-    .menu {
-        padding: 5px 10px;
-    }
-    .menu a {
-        padding: 8px 12px;
-        font-size: 14px;
-    }
-}
-
